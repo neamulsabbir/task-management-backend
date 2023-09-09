@@ -106,11 +106,11 @@ async function run() {
       const result = await taskCollection.insertOne(newTask);
       res.send(result);
     });
-    // app.get("/api/manageTasks", async (req, res) => {
-    //   const query = {};
-    //   const result = await taskCollection.find(query).toArray();
-    //   res.send(result);
-    // });
+    app.get("/api/manageTasks", async (req, res) => {
+      const query = {};
+      const result = await taskCollection.find(query).toArray();
+      res.send(result);
+    });
     app.get("/api/manageTasks/:id", async (req, res) => {
       const id = req.params.id;
       // console.log(id);
